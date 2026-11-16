@@ -1,6 +1,5 @@
-
-import { Pressable, Text, TextInput, View } from 'react-native';
-import { styles } from '../styles/home.styles';
+import { Pressable, Text, TextInput, View } from "react-native";
+import { styles } from "../styles/home.styles";
 
 type CounterProps = {
   value: number;
@@ -15,7 +14,6 @@ export const Counter = ({
   min = 1,
   max = 45,
 }: CounterProps) => {
-
   const handleChange = (amount: number) => {
     const newValue = Math.max(min, Math.min(max, value + amount));
     onChange(newValue);
@@ -23,10 +21,7 @@ export const Counter = ({
 
   return (
     <View style={styles.counter}>
-      <Pressable
-        style={styles.counterButton}
-        onPress={() => handleChange(-1)}
-      >
+      <Pressable style={styles.counterButton} onPress={() => handleChange(-1)}>
         <Text style={styles.counterSymbol}>−</Text>
       </Pressable>
 
@@ -34,13 +29,11 @@ export const Counter = ({
         style={styles.counterInput}
         value={String(value)}
         onChangeText={(text) => {
-          if (text === '') return;
+          if (text === "") return;
 
           const number = Number(text);
 
-          if (
-            Number.isInteger(number)
-          ) {
+          if (Number.isInteger(number)) {
             onChange(number);
           }
         }}
@@ -49,12 +42,9 @@ export const Counter = ({
         maxLength={2}
       />
 
-      <Pressable
-        style={styles.counterButton}
-        onPress={() => handleChange(1)}
-      >
+      <Pressable style={styles.counterButton} onPress={() => handleChange(1)}>
         <Text style={styles.counterSymbol}>+</Text>
       </Pressable>
     </View>
   );
-}
+};

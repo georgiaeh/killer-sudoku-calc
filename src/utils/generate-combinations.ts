@@ -2,20 +2,13 @@ export function generateCombinations(
   cellCount: number,
   targetSum: number,
   mustContain: number[],
-  cantContain: number[]
+  cantContain: number[],
 ): number[][] {
   const results: number[][] = [];
 
-  function generate(
-    start: number,
-    current: number[],
-    sum: number
-  ) {
+  function generate(start: number, current: number[], sum: number) {
     if (current.length === cellCount) {
-      if (
-        sum === targetSum &&
-        mustContain.every(n => current.includes(n))
-      ) {
+      if (sum === targetSum && mustContain.every((n) => current.includes(n))) {
         results.push([...current]);
       }
 
