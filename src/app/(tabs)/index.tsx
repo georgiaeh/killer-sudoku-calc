@@ -3,7 +3,7 @@ import { DigitSelector } from "@/components/DigitSelector";
 import { generateCombinations } from "@/utils/generate-combinations";
 import { useMemo, useState } from "react";
 import { SafeAreaView, ScrollView, Text, View } from "react-native";
-import { styles } from "../styles/home.styles";
+import { styles } from "../../styles/home.styles";
 
 export default function HomeScreen() {
   const [targetSum, setTargetSum] = useState(15);
